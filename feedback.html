@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login</title>
+    <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
+    rel="stylesheet">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+header {
+    background-color: #232f3e;
+    color: #ffffff;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #1a1a1a;
+    border-radius: 5px;
+}
+
+
+#feedbackForm {
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fefafaf5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    
+}
+
+input[type="radio"] {
+    margin-bottom: 16px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+      
+    </style>
+  </head>
+  <body>
+    <header class="header" data-header>
+      <div class="container">
+  
+        <div class="overlay" data-overlay></div>
+  
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.svg" alt="Ridex logo">
+        </a>
+  
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+  
+            <li>
+              <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+            </li>
+  
+            <li>
+              <a href="index.html" class="navbar-link" data-nav-link>Explore cars</a>
+            </li>
+  
+            <li>
+              <a href="index.html" class="navbar-link" data-nav-link>About us</a>
+            </li>
+  
+            <li>
+              <a href="index.html" class="navbar-link" data-nav-link>Blog</a>
+            </li>
+  
+            <li>
+              <a href="login (1).html" class="navbar-link" data-nav-link>Login</a>
+            </li>
+  
+            <li>
+              <a href="register (1).html" class="navbar-link" data-nav-link>SignUp</a>
+            </li>
+  
+          </ul>
+        </nav>
+  
+        <div class="header-actions">
+  
+          <div class="header-contact">
+            <a class="contact-link">91+ 9989898989</a>
+  
+            <span class="contact-time">ridex2023@gmail.com</span>
+          </div>
+  
+          <a href="index.html" class="btn" aria-labelledby="aria-label-txt">
+            <ion-icon name="car-outline"></ion-icon>
+  
+            <span id="aria-label-txt">Explore cars</span>
+          </a>
+  
+          <a href="index.html" class="btn user-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+          </a>
+  
+          <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+          </button>
+  
+        </div>
+  
+      </div>
+    </header>
+  
+  
+
+    <main>
+        <!-- Feedback Form -->
+        <form action="#" method="post" id="feedbackForm" onsubmit="return submitFeedback()">
+            <label for="name">Your Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="Mobile">Mobile Number:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="Email">Your Email :</label>
+            <input type="email" id="name" name="name" required>
+    
+            
+            <br><br>
+            <label for="rating">Your Rating:</label>
+            <br>
+            <label for="rating5">5 Stars</label>
+            <input type="radio" id="rating5" name="rating" value="5" required>
+    
+           <label for="rating4">4 Stars</label>
+            <input type="radio" id="rating4" name="rating" value="4" required>
+    
+            <label for="rating4">3 Stars</label>
+            <input type="radio" id="rating4" name="rating" value="4" required>
+    
+            <label for="rating4">2 Stars</label>
+            <input type="radio" id="rating4" name="rating" value="4" required>
+    
+            <label for="rating4">1 Stars</label>
+            <input type="radio" id="rating4" name="rating" value="4" required>
+            
+    
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+    
+            <button type="button"  onclick="submitForm()">Submit Feedback</button>
+        </form>
+    
+        <!-- Feedback Results -->
+        <div class="result" id="feedbackResult"></div>
+    </main>
+
+  <script>
+    function submitForm() {
+    var name = document.getElementById('name').value;
+    var rating = document.querySelector('input[name="rating"]:checked');
+    var feedback = document.getElementById('feedback').value;
+
+    if (!rating) {
+        alert("Please select a rating.");
+        return false;
+    }
+
+    var resultDiv = document.getElementById('feedbackResult');
+    resultDiv.innerHTML = `
+        <h2>Thank you, ${name}!</h2>
+        <p>Your ${rating.value}-star feedback:</p>
+        <p>${feedback}</p>
+    `;
+
+    document.getElementById('feedbackForm').reset();
+
+           ; // Prevent form submission
+    alert("Your Reviews Received !! Thank You For Your feedback")
+    window.location.href = 'index.html';
+}
+  </script>
+</div>
+
+
+
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+

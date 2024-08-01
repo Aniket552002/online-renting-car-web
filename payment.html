@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+    <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
+    rel="stylesheet">
+    <style>
+      
+      .containers {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 40px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-top: 100px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+    </style>
+    <header class="header" data-header>
+      <div class="container">
+  
+        <div class="overlay" data-overlay></div>
+  
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.svg" alt="Ridex logo">
+        </a>
+  
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+  
+            <!-- <li>
+              <a href="#home" class="navbar-link" data-nav-link>Home</a>
+            </li>
+  
+            <li>
+              <a href="#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
+            </li>
+  
+            <li>
+              <a href="#" class="navbar-link" data-nav-link>About us</a>
+            </li>
+  
+            <li>
+              <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+            </li> 
+  
+            <li>
+              <a href="login (1).html" class="navbar-link" data-nav-link>Login</a>
+            </li>
+  
+            <li>
+              <a href="register (1).html" class="navbar-link" data-nav-link>SignUp</a>
+            </li>
+  
+          </ul> -->
+        </nav>
+  
+        <div class="header-actions">
+  
+          <div class="header-contact">
+            <a class="contact-link">91+ 9989898989</a>
+  
+            <span class="contact-time">ridex2023@gmail.com</span>
+          </div>
+  
+          <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
+            <ion-icon name="car-outline"></ion-icon>
+  
+            <span id="aria-label-txt">Explore cars</span>
+          </a>
+  
+          <a href="#" class="btn user-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+          </a>
+  
+          <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+          </button>
+  
+        </div>
+  
+      </div>
+    </header>
+
+<div class="containers">
+    <h1>Booking</h1>
+    <form action="card.html" method="get">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input
+        type="text"
+        name="password"
+        placeholder="PickupDate"
+        required
+      />
+      <input
+        type="text"
+        name="confirmPassword"
+        placeholder="DropDate"
+        required
+      />
+      <input type="submit" value="PAY NOW" class="btn" />
+    </form>
+  </div>
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
